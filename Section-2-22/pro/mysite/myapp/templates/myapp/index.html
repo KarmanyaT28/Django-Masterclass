@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <!-- {{ item_list }} -->
+    <!-- {% for item in item_list %}
+    {{ item.item_name }} -> {{ item.item_price }} -> {{ item.item_desc }} <br>
+    {% endfor %} -->
+
+    <ul>
+        {% for item in item_list %}
+        <a href="{% url 'myapp:detail' item.id %}"><li>{{ item.item_name }} -> {{ item.item_price }} -> {{ item.item_desc }}</li></a>
+        
+
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
