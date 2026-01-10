@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit"><a class="bg-green-500 px-4 py-2 rounded-md font-bold text-white" href="{% url 'myapp:index' %}">
+        Save
+    </a></button>
+</form>
+<br>
+
+<button><a class="bg-blue-500 px-4 py-2 rounded-md font-bold text-white" href="{% url 'myapp:index' %}">
+        Back
+    </a></button>
+{% endblock %}
