@@ -5,10 +5,10 @@ from . import views
 app_name = 'myapp'
 
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('',views.IndexClassView.as_view(),name='index'),
     # path('item/',views.item,name='item'),
-    path('<int:id>/',views.detail, name='detail'),
-    path('add/',views.create_item, name='create-item'), 
-    path('update/<int:id>/',views.update_item, name='update-item'),
-    path('delete/<int:id>/',views.delete_item, name='delete-item'),
+    path('<int:pk>/',views.DetailClassView.as_view(), name='detail'),
+    path('add/',views.ItemCreateView.as_view(), name='create-item'), 
+    path('update/<int:pk>/',views.ItemUpdateView.as_view(), name='update-item'),
+    path('delete/<int:pk>/',views.ItemDeleteView.as_view(), name='delete-item'),
 ]

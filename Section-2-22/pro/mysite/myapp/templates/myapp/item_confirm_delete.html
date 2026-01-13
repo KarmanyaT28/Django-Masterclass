@@ -1,0 +1,10 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h2>Are you sure you want to delete the item?</h2>
+    <button type="submit"><a class="bg-red-500 px-4 py-2 rounded-md font-bold text-white">Confirm</a></button>
+</form>
+
+{% endblock %}
