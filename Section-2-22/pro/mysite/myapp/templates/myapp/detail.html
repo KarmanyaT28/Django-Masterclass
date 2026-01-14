@@ -15,9 +15,11 @@
             <div class=" text-2xl">{{item.item_desc}}</div>
 
             <div class="space-x-6">
+                {% if item.user_name == request.user %}
                     <a class="bg-yellow-500 px-4 py-2 rounded-md font-bold text-white" href="{% url 'myapp:update-item' item.id %}">Edit</a>
+                
                     <a class="bg-red-500 px-4 py-2 rounded-md font-bold text-white" href="{% url 'myapp:delete-item' item.id %}">Delete</a>
-
+                {% endif %}
             </div>
 
 

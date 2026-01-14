@@ -1,3 +1,31 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block body %}
+
+<div class="flex flex-col justify-center items-center min-h-screen p-10">
+    <h1>Register</h1>
+    <form method="POST" class="shadow-lg space-y-6 p-10 w-96">
+        {% csrf_token %}
+
+        {% for field in form %}
+
+        <div>
+            <label for="">{{field.label}}</label>
+            <div class="border rounded p-2">{{field}}</div>
+        </div>
+
+
+        {% endfor %}
+
+        <button class="bg-blue-500 text-white px-4 py-2 w-full">Register</button>
+
+    </form>
+</div>
+
+
+{% endblock %}
+
 <form method="POST">
 
     {% csrf_token %}
